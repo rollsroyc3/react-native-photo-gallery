@@ -1,37 +1,42 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, Image } from 'react-native';
 
+export const SIZE = 64;
+
 class SwiperThumb extends Component {
-  goToSlide() {
+
+  goToSlide = () => {
     this.props.navigate(this.props.index);
   }
 
   render() {
     return (
       <TouchableOpacity
-        style={s.container}
-        onPress={this.goToSlide.bind(this)}
+        style={styles.container}
+        onPress={this.goToSlide}
+        activeOpacity={1}
       >
         <Image
-          style={{ ...s.thumb, opacity: this.props.active ? 1 : 0.6 }}
-          source={this.props.data[this.props.index].thumb||this.props.data[this.props.index].image}
+          style={[styles.thumb, {opacity: this.props.active ? 1 : 0.6}]}
+          source={this.props.data.thumb || this.props.data.image}
         />
       </TouchableOpacity>
     );
   }
 }
 
-const s = {
+const styles = {
   container: {
-    width: 64,
+    width: SIZE,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 64,
+    height: SIZE,
   },
   thumb: {
-    width: 64,
-    height: 64,
+    width: SIZE,
+    height: SIZE,
   }
 };
+
 
 export default SwiperThumb;

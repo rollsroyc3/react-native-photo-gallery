@@ -4,14 +4,16 @@ import PhotoView from 'react-native-photo-view';
 
 const styles = {
   slideC: {
-    flex: 1,
+    backgroundColor:'transparent',
     alignItems: 'center',
     justifyContent: 'center',
   },
   scrollViewC: {
+    backgroundColor:'transparent',
     alignItems: 'center',
-    top: Platform.OS === 'android' ? -32 : 70,
+    top: 0,
     justifyContent: 'center',
+    flex: 1
   },
   loader: {
     position: 'absolute',
@@ -21,43 +23,58 @@ const styles = {
 };
 
 export class Slide extends Component {
+  constructor(props) {
+    super(props);
+    this.state ={
+      loading : undefined
+    }
+  }
+  handleLoadStart = (e) => {
+    this.setState({loading: true})
+    this.props.onLoadStart && this.props.onLoadStart(e);
+  }
+  handleLoad = (e) => {
+    this.setState({loading: false})
+    this.props.onLoad && this.props.onLoad(e);
+  }
+  handleLoadEnd = (e) => {
+    this.setState({loading: false})
+    this.props.onLoadEnd && this.props.onLoadEnd(e);
+  }
+  handleTap = (e) => {
+    this.props.item.onTap && this.props.item.onTap(e);
+  }
+  handleViewTap = (e) => {
+    this.props.item.onViewTap && this.props.item.onViewTap(e);
+  }
   render() {
     const inside = {
       width: Dimensions.get('window').width,
-      height: Dimensions.get('window').height - 128,
+      height: Dimensions.get('window').height,
     };
-
     return (
       <View
-        style={[
-          styles.slideC,
-          { width: Dimensions.get('window').width, height: Dimensions.get('window').height }
-        ]}
+        style={styles.slideC}
       >
-        <ActivityIndicator style={styles.loader} />
-        {Platform.OS === 'android' ?
-          <PhotoView
-            source={this.props.item.image}
-            maximumZoomScale={3}
-            zoomScale={1}
-            androidScaleType="center"
-            resizeMode="contain"
-            style={[
-              styles.scrollViewC,
-              inside
-            ]}
-          /> :
-          <ScrollView
-            maximumZoomScale={3}
-            zoomScale={1}
-            style={[{ flex: 1 }, inside]}
-            contentContainerStyle={[
-              styles.scrollViewC,
-              inside
-            ]}
-          >
-            <Image source={this.props.item.image} style={inside} resizeMode="contain" />
-          </ScrollView>
+        <PhotoView
+          source={this.props.item.image}
+          maximumZoomScale={3}
+          zoomScale={1}
+          androidScaleType="fitCenter"
+          resizeMode="contain"
+          style={[
+            styles.scrollViewC,
+            inside
+          ]}
+          onTap={this.handleTap}
+          onViewTap={this.handleViewTap}
+          onLoadStart={this.handleLoadStart}
+          onLoad={this.handleLoad}
+          onLoadEnd={this.handleLoadEnd}
+        />
+        {
+          this.state.loading === true &&
+            <ActivityIndicator style={styles.loader} color="#fff" size="small" />
         }
         {this.props.item.overlay}
       </View>
