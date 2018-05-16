@@ -45,7 +45,6 @@ export class Pagination extends Component {
           }]}
           initialNumToRender={this.props.initialNumToRender}
           initialScrollIndex={this.props.initialIndex}
-          pagingEnabled
           getItemLayout={this.getItemLayout}
           keyExtractor={item => String(item.id)}
         />
