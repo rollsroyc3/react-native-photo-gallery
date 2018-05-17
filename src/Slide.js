@@ -60,6 +60,8 @@ export class Slide extends Component {
           source={this.props.item.image}
           maximumZoomScale={3}
           zoomScale={1}
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
           androidScaleType="fitCenter"
           resizeMode="contain"
           style={[
