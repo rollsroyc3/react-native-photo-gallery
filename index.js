@@ -18,7 +18,7 @@ export default class Gallery extends Component {
     backgroundColor: '#000',
     data : [],
     paginationSize: 10,
-    initialNumToRender: 4
+    initialNumToRender: 4,
     onChange: () => {},
   }
   static propsType = {
