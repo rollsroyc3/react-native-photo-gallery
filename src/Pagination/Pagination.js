@@ -8,14 +8,14 @@ export class Pagination extends Component {
     super(props);
   }
 
-  componentDidUpdate() {
-    const index = this.props.index;
-    if(index != undefined && index != null) {
-      this.list.scrollToIndex({
-        index
-      });
-    }
-  }
+//   componentDidUpdate() {
+//     const index = this.props.index;
+//     if(index != undefined && index != null) {
+//       this.list.scrollToIndex({
+//         index
+//       });
+//     }
+//   }
 
   navigate(index) {
     this.props.goTo(index);
