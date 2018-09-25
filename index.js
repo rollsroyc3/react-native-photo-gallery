@@ -19,9 +19,11 @@ export default class Gallery extends Component {
     data : [],
     paginationSize: 10,
     initialNumToRender: 4
+    onChange: () => {},
   }
   static propsType = {
     backgroundColor: PropTypes.string,
+    onChange: PropTypes.func,
     data: PropTypes.arrayOf((propValue, key) => {
       if (!propValue[key].id || !propValue[key].image) {
         return new Error(
@@ -41,7 +43,7 @@ export default class Gallery extends Component {
     const viewSize = e.nativeEvent.layoutMeasurement;
     const pageNum = Math.floor(contentOffset.x / viewSize.width);
     if (pageNum !== this.state.index) {
-      this.setState({ index: pageNum });
+      this.setIndex(pageNum);
     }
   }
 
@@ -54,8 +56,13 @@ export default class Gallery extends Component {
   }
 
   goTo = (index) => {
+    this.setIndex({ index });
+    this.swiper.scrollToIndex({ index: Number(index) });
+  }
+  
+  setIndex = (index) => {
     this.setState({ index });
-    this.swiper.scrollToIndex({ index });
+    this.props.onChange
   }
 
   render() {
