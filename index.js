@@ -105,6 +105,6 @@ const styles = {
   },
   content: {
     flex : 1,
-    marginTop: Platform.OS == 'ios' ? (isIphoneX ? 44 : 20) : 0
+    //marginTop: Platform.OS == 'ios' ? (isIphoneX ? 44 : 20) : 0
   }
 };
