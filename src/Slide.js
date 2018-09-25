@@ -7,6 +7,7 @@ const styles = {
     backgroundColor:'transparent',
     alignItems: 'center',
     justifyContent: 'center',
+    position: 'relative',
   },
   scrollViewC: {
     backgroundColor:'transparent',
