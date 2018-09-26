@@ -8,7 +8,7 @@ class AddThumb extends Component {
     render() {
         return (
             <TouchableOpacity style={styles.container} onPress={this.onAdd} activeOpacity={1}>
-                <View style={[styles.image, styles.addImageContainer]}>
+                <View style={[styles.thumb, styles.addImageContainer]}>
                     <Icon
                         color="white"
                         underlayColor="white"
@@ -28,15 +28,12 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         height: SIZE,
+        marginRight: 10,
+        marginLeft: 10,
     },
     thumb: {
         width: SIZE,
         height: SIZE,
-    },
-    image: {
-        width: 60,
-        height: 60,
-        margin: 10,
     },
     addImageContainer: {
         backgroundColor: '#A7A7A7',
