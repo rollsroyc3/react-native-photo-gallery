@@ -28,8 +28,7 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         height: SIZE,
-        marginRight: 10,
-        marginLeft: 10,
+        margin: 5,
     },
     thumb: {
         width: SIZE,
