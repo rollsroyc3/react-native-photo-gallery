@@ -50,7 +50,7 @@ export default class Gallery extends Component {
     };
 
     goTo = index => {
-        this.setIndex({ index });
+        this.setIndex(index);
         this.swiper.scrollToIndex({ index: Number(index) });
     };
 
