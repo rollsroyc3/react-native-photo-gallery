@@ -72,6 +72,7 @@ export class Pagination extends Component {
 
 const styles = {
     container: {
+        backgroundColor: 'white',
         width: Dimensions.get('window').width,
         height: SIZE,
         alignItems: 'center',

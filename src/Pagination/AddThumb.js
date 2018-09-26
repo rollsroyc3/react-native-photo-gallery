@@ -7,7 +7,7 @@ export const SIZE = 80;
 class AddThumb extends Component {
     render() {
         return (
-            <TouchableOpacity style={styles.container} onPress={this.onAdd} activeOpacity={1}>
+            <TouchableOpacity style={styles.container} onPress={this.props.onAdd} activeOpacity={1}>
                 <View style={[styles.thumb, styles.addImageContainer]}>
                     <Icon
                         color="white"
