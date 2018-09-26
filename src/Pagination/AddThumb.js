@@ -45,4 +45,4 @@ const styles = {
     },
 };
 
-export default SwiperThumb;
+export default AddThumb;
