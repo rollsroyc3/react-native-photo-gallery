@@ -62,7 +62,7 @@ export default class Gallery extends Component {
   
   setIndex = (index) => {
     this.setState({ index });
-    this.props.onChange(this.props.data[index].ImageID);
+    this.props.onChange(this.props.data[index].id);
   }
 
   render() {
