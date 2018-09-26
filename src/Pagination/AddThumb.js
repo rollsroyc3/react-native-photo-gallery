@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, Image } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 export const SIZE = 80;
