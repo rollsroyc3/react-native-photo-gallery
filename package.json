@@ -1,28 +1,29 @@
 {
-  "name": "react-native-photo-gallery",
-  "version": "0.1.10",
-  "description": "A simple gallery component",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "react-native",
-    "gallery",
-    "photo",
-    "ios",
-    "android",
-    "zoom",
-    "pagination"
-  ],
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/Snapp-FidMe/react-native-photo-gallery"
-  },
-  "author": "Michaël Villeneuve",
-  "license": "MIT",
-  "dependencies": {
-    "prop-types": "^15.5.10",
-    "react-native-photo-view": "https://github.com/alwx/react-native-photo-view#e28f5416574cbfa07b2d4fa862c0048df56f7b02"
-  }
+    "name": "react-native-photo-gallery",
+    "version": "0.1.10",
+    "description": "A simple gallery component",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "react-native",
+        "gallery",
+        "photo",
+        "ios",
+        "android",
+        "zoom",
+        "pagination"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Snapp-FidMe/react-native-photo-gallery"
+    },
+    "author": "Michaël Villeneuve",
+    "license": "MIT",
+    "dependencies": {
+        "prop-types": "^15.5.10",
+        "react-native-photo-view": "https://github.com/alwx/react-native-photo-view#e28f5416574cbfa07b2d4fa862c0048df56f7b02",
+        "react-native-elements": "^0.19.1"
+    }
 }
