@@ -24,6 +24,7 @@
     "dependencies": {
         "prop-types": "^15.5.10",
         "react-native-photo-view": "https://github.com/alwx/react-native-photo-view#e28f5416574cbfa07b2d4fa862c0048df56f7b02",
-        "react-native-elements": "^0.19.1"
+        "react-native-elements": "^0.19.1",
+        "react-native-cached-image": "git+https://github.com/fungilation/react-native-cached-image.git"
     }
 }
