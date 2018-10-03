@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TouchableOpacity } from 'react-native';
-import { CachedImage } from 'react-native-cached-image';
+import FastImage from 'react-native-fast-image';
 
 export const SIZE = 80;
 
@@ -13,6 +13,10 @@ class SwiperThumb extends Component {
         return (
             <TouchableOpacity style={styles.container} onPress={this.goToSlide} activeOpacity={1}>
                 <CachedImage
+                    style={[styles.thumb, { opacity: this.props.active ? 1 : 0.6 }]}
+                    source={this.props.data.thumb || this.props.data.image}
+                />
+                <FastImage
                     style={[styles.thumb, { opacity: this.props.active ? 1 : 0.6 }]}
                     source={this.props.data.thumb || this.props.data.image}
                 />
