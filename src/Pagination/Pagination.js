@@ -9,14 +9,18 @@ export class Pagination extends Component {
         super(props);
     }
 
-    //   componentDidUpdate() {
-    //     const index = this.props.index;
-    //     if(index != undefined && index != null) {
-    //       this.list.scrollToIndex({
-    //         index
-    //       });
-    //     }
-    //   }
+    componentDidUpdate() {
+        const index = this.props.index;
+        if (index != undefined && index != null) {
+            try {
+                this.list.scrollToIndex({
+                    index,
+                });
+            } catch (e) {
+                console.log('RNPG - error scroll to index');
+            }
+        }
+    }
 
     navigate(index) {
         this.props.goTo(index);
