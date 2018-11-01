@@ -13,9 +13,11 @@ export class Pagination extends Component {
         const index = this.props.index;
         if (index != undefined && index != null) {
             try {
-                this.list.scrollToIndex({
-                    index,
-                });
+                setTimeout(index => {
+                    this.list.scrollToIndex({
+                        index,
+                    });
+                }, 1000);
             } catch (e) {
                 console.log('RNPG - error scroll to index');
             }
