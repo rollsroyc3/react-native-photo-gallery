@@ -9,28 +9,6 @@ export class Pagination extends Component {
         super(props);
     }
 
-    timeoutID = null;
-
-    componentDidUpdate() {
-        const index = this.props.index;
-        if (index != undefined && index != null) {
-            try {
-                this.timeoutID = setTimeout(index => {
-                    this.list &&
-                        this.list.scrollToIndex({
-                            index,
-                        });
-                }, 1000);
-            } catch (e) {
-                console.log('RNPG - error scroll to index');
-            }
-        }
-    }
-
-    componentWillUnmount() {
-        clearTimeout(this.timeoutID);
-    }
-
     navigate(index) {
         this.props.goTo(index);
     }
