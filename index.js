@@ -77,6 +77,7 @@ export default class Gallery extends Component {
                     renderItem={img => <Slide {...img} />}
                     keyExtractor={item => String(item.id)}
                     keyboardShouldPersistTaps="handled"
+                    onScrollToIndexFailed={() => {}}
                 />
                 <Pagination
                     index={this.state.index}
