@@ -9,6 +9,26 @@ export class Pagination extends Component {
         super(props);
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const index = this.props.index;
+
+        if (index == prevProps.index) {
+            return;
+        }
+
+        if (index != undefined && index != null) {
+            try {
+                setTimeout(() => {
+                    this.list.scrollToIndex({
+                        index,
+                    });
+                }, 500);
+            } catch (e) {
+                console.log('RNPG - error scroll to index');
+            }
+        }
+    }
+
     navigate(index) {
         this.props.goTo(index);
     }
@@ -55,6 +75,7 @@ export class Pagination extends Component {
                     initialScrollIndex={this.props.initialIndex}
                     getItemLayout={this.getItemLayout}
                     keyExtractor={item => String(item.id)}
+                    onScrollToIndexFailed={() => {}}
                 />
             </View>
         );
